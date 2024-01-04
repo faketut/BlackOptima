@@ -8,7 +8,7 @@ The Portfolio Robo-Advising Project involves teams selecting either the riskiest
 - **Safest Portfolio:** It aims for an ending value closest to zero compared to the initial $750,000 CAD portfolio value.
 
 ## Task Details
-- **Library Usage:** Use provided libraries; seek permission for additional ones.
+- **Library Usage:** numpy, pandas, matplotlib, Yahoo Finance
 
 ### Key Project Criteria
 - Dynamic creation of a portfolio without prior knowledge of stock tickers.
