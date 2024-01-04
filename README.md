@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The Portfolio Robo-Advising Project involves teams selecting either the riskiest or the safest portfolio to compete for prizes. Teams will create portfolios dynamically while aiming for specific performance criteria.
+The Portfolio Robo-Advising Project involves teams selecting the "safest" portfolio to compete for prizes. Teams will create portfolios dynamically while aiming for specific performance criteria.
 
 ### Goals
 - **Safest Portfolio:** It aims for an ending value closest to zero compared to the initial $750,000 CAD portfolio value.
