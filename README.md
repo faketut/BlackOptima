@@ -1,4 +1,4 @@
-# Portfolio Robo-Advising Project
+# Portfolio-Trading-Bot
 
 ## Project Overview
 
