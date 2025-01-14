@@ -5,7 +5,8 @@
 The Portfolio Robo-Advising Project involves teams selecting the "safest" portfolio to compete for prizes. Teams will create portfolios dynamically while aiming for specific performance criteria.
 
 ## Task Details
-- **Library Usage:** numpy, pandas, matplotlib, Yahoo Finance
+- **Library Usage:** numpy, pandas, matplotlib
+- **API Key Usage:** Yahoo Finance
 
 ### Key Project Criteria
 - Dynamic creation of a portfolio without prior knowledge of stock tickers.
