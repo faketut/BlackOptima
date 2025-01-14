@@ -22,6 +22,6 @@ The Portfolio Robo-Advising Project involves teams selecting the "safest" portfo
 - Create a "Stocks_Final" DataFrame with stock tickers and shares, saved as "Stocks_Group_XX.csv".
 
 ## Additional Insights
-- **Dividends:** Not considered for this assignment.
+- **Dividends:** Not considered for this project.
 
 
