@@ -1,5 +1,5 @@
 ### Project Overview
-The Portfolio Trading Bot is designed to dynamically select a portfolio of stocks, optimized for safety based on certain criteria, and manage a specified budget for stock purchasing. The bot operates within the constraints of the US and Canadian stock markets, with an emphasis on fulfilling specific trading requirements.
+The project is designed to dynamically select a portfolio of stocks, optimized for safety based on certain criteria, and manage a specified budget for stock purchasing. The bot operates within the constraints of the US and Canadian stock markets, with an emphasis on fulfilling specific trading requirements.
 
 ### Key Project Specifications
 Required Libraries: numpy, pandas, matplotlib
