@@ -3,6 +3,15 @@
 ### Project Overview
 This project implements a quantitative portfolio optimization strategy using the Black-Litterman model. It aims to construct an optimized portfolio based on historical stock data, market equilibrium, and momentum-based investor views.
 
+|Ticker	|Price	|Currency|	Shares|	Weight|
+| --- | --- | --- |--- |--- |
+|AMZN|	183.99745687193536|	USD|	185.2792406507923|	0.04545454545454545|
+|BMY|	66.18053321351317|	USD|	515.1198915385618|	0.04545454545454545|
+|T.TO|	20.221773147583008|	CAD	|1685.8516235003742|	0.04545454545454545|
+|RY.TO|	105.10741424560547|	CAD	|324.34352358101535|	0.04545454545454545|
+|C|	51.017373495814354|	USD	|668.2215636543114|	0.04545454545454545|
+- Table from optimized_portfolio.csv.
+
 ### Core Functionality:
 
 1.  **Data Loading & Filtering:**
