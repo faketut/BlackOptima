@@ -1,4 +1,4 @@
-# QuantPulse Portfolio Optimizer (main_v1.py)
+# BlackOptima (main_v1.py)
 
 ### Project Overview
 This project implements a quantitative portfolio optimization strategy using the Black-Litterman model. It aims to construct an optimized portfolio based on historical stock data, market equilibrium, and momentum-based investor views.
