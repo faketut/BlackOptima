@@ -1,16 +1,51 @@
+# QuantPulse Portfolio Optimizer (main_v1.py)
+
 ### Project Overview
-The project is designed to dynamically select a portfolio of stocks, optimized for safety based on certain criteria, and manage a specified budget for stock purchasing. The bot operates within the constraints of the US and Canadian stock markets, with an emphasis on fulfilling specific trading requirements.
+This project implements a quantitative portfolio optimization strategy using the Black-Litterman model. It aims to construct an optimized portfolio based on historical stock data, market equilibrium, and momentum-based investor views.
 
-#### Portfolio Generation:
-- The bot must autonomously generate a portfolio without predefined stock tickers.
-- Stock tickers will be sourced from the "Tickers.csv" file, which resides in the same directory as the executable code.
-- The stock selection process will be restricted to securities listed on US and Canadian exchanges.
-Stocks selected must meet a minimum average monthly trading volume threshold.
-#### Portfolio Construction:
-- The portfolio will consist of 10 to 22 stocks, with predefined weightings for each stock.
-- The bot must utilize the full CAD 750,000 budget for stock purchases, accounting for transaction fees.
-Portfolio stock valuations will be based on the closing prices from November 25, 2023.
+### Core Functionality:
 
-### Output Deliverables
-A Portfolio_Final DataFrame will be generated, containing detailed information about the selected stocks and their respective portfolio values.
-A Stocks_Final DataFrame will be created, listing stock tickers along with the number of shares, and saved as "Stocks_Group_XX.csv".
+1.  **Data Loading & Filtering:**
+    *   Loads an initial list of stock tickers from `Tickers_Example.csv`.
+    *   Filters tickers to include only those available via `yfinance` and meeting minimum liquidity requirements (average monthly volume >= 150,000 based on data from `2023-01-01` to `2023-10-31`).
+
+2.  **Metric Calculation:**
+    *   Fetches historical stock data for the specified period (`2023-01-01` to `2023-10-31`).
+    *   Calculates average returns and EWMA volatility for each eligible stock.
+
+3.  **Covariance Estimation:**
+    *   Computes the covariance matrix of asset returns using the Ledoit-Wolf shrinkage method for improved stability.
+
+4.  **Black-Litterman Model:**
+    *   Estimates market equilibrium returns (implied by CAPM).
+    *   Generates simple investor views based on 3-month price momentum.
+    *   Combines equilibrium returns and views to produce posterior expected returns.
+
+5.  **Portfolio Optimization:**
+    *   Performs mean-variance optimization using the posterior returns and shrunk covariance matrix.
+    *   Aims to maximize a utility function based on a specified risk aversion level (currently 2.5).
+    *   Constraints include weights summing to 1 and a maximum allocation of 10% per stock.
+
+6.  **Portfolio Construction:**
+    *   Selects up to 22 stocks (`MAX_STOCKS = 22`) with the highest optimal weights.
+    *   Normalizes the weights of the selected stocks.
+    *   Calculates the number of shares for each stock based on an initial investment budget of CAD 750,000 (`INITIAL_INVESTMENT = 750000`) and recent prices (end of the analysis period). Currency conversion (USD to CAD) is handled where necessary.
+
+### Input Files:
+*   `Tickers_Example.csv`: A file containing a list of potential stock tickers (one per line).
+
+### Output Deliverables:
+*   `optimized_portfolio.csv`: A CSV file containing the final optimized portfolio, including:
+    *   Ticker: Stock symbol.
+    *   Price: Last closing price used for calculation (in CAD).
+    *   Currency: Original currency of the stock.
+    *   Shares: Calculated number of shares to purchase.
+    *   Weight: Optimized weight of the stock in the final portfolio.
+*   **Performance Plot:** A matplotlib chart comparing the cumulative returns of the optimized portfolio against the S&P 500 benchmark (`^GSPC`) over the analysis period. This plot is displayed when the script runs.
+
+### Dependencies:
+*   pandas
+*   numpy
+*   yfinance
+*   matplotlib
+*   scipy
